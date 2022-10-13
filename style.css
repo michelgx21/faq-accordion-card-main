@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root{
+    /*Text*/
+--Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+--Softred: hsl(14, 88%, 65%);
+--Verydarkgrayishblue: hsl(237, 12%, 33%);
+--Darkgrayishblue: hsl(240, 6%, 50%);
+
+/*Background gradient:*/
+--Softviolet: hsl(273, 75%, 66%);
+--Softblue: hsl(240, 73%, 65%);
+
+/*Dividers*/
+--Lightgrayishblue: hsl(240, 5%, 91%);
+ /*font-size*/
+ --fontSize:12px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: var(--fontSize);
+}
+
+body{
+    margin: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+     min-height: 100vh;
+     width: 100vw;
+     background: linear-gradient(var(--Softviolet),var(--Softblue));
+     display: grid;
+     justify-content: center;
+     align-items: center;
+
+}
+
+.wrapper{
+    background: white;
+    border-radius: 30px;
+    height: 509px;
+    width: 920px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 6rem;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 1260% 60%;
+    
+}
+
+.question_answer_accordion > .answer{
+    display: none;
+}
+.accordion__warpper{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion__question{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.question_answer_accordion{
+    width: 350px;
+    border-bottom: 1px solid var(--Lightgrayishblue);
+}
+
+.title_warpper{
+    font-size: 3rem;
+    margin-top: 0px;
+}
+
+.question_title{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 1.4rem 0rem;
+}
+
+.question{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--Verydarkgrayishblue);
+}
+
+.question:hover{
+    color: var(--Softred);
+}
+
+.active .answer{
+    display: block;
+    color: var(--Verydarkgrayishblue);
+    transition: all .3s ease-in;
+    margin-bottom: 2rem;
+} 
+
+img{
+    transform: rotate(0deg);
+    transition: all .3s ease-in;
+}
+
+.active img{
+    transform: rotate(180deg);
+    transition: all .3s ease-in;
+}
+
+.active .question_title{
+    font-weight: 700;
+    color: var(--Verydarkdesaturatedblue);
+}
+
+
+.question img{
+    align-self: center;
+}
+
+.images__warpper{
+    position: relative;
+}
+
+.images__warpper__inner{
+    background: url(./images/illustration-woman-online-desktop.svg);
+    background-repeat: no-repeat;
+    background-position: 120% center;
+    height: 100%;
+}
+
+.box{
+    position: absolute;
+    top: 42%;
+    left: -25%;
+}
+.wrapper:hover .box{
+    left: -33%;
+}
+@media screen and (max-width:1024px) {
+    :root{
+        --fontSize:11px;
+    
+     }    
+
+    .wrapper{
+        width:790px;
+        background-position: center;
+        background-position-x:-200% ;
+        background-size: 83%;
+
+}
+    .question_answer_accordion{
+        width: 280px;
+    }
+}
+@media screen and (max-width:920px) {
+    :root{
+        --fontSize:10px;
+    }
+    .wrapper{
+        width:790px;
+
+    }
+}
+
+@media screen and (max-width:800px) {
+   
+
+    .wrapper{
+        position: fixed;
+        grid-template-columns: 320px;
+        height: 530px;
+        width: 320px;
+        background-image: url(./images/bg-pattern-mobile.svg);
+        background-position: center -0%;
+        margin-top: 100px;
+        margin-left: 10%;
+        text-align: center;
+background-size: auto;
+    }
+     
+
+.images__warpper{
+    margin-top: 5%;
+    position: absolute;
+    top: -24%;
+}
+
+     .images__warpper__inner{
+        background-image: url(./images/illustration-woman-online-mobile.svg);
+         position: absolute;
+         width: 320px;
+        height: 180px;
+        background-position-x: center;
+     }
+
+     .box{
+        display: none;
+     }
+
+     .question_answer_accordion{
+        margin-left: 3rem;
+        width: 270px;
+     }
+
+     .title_warpper{
+        margin-top: 3rem;
+     }
+
+     .question_title{
+        margin: 2rem 0rem;
+    
+
+ 
+     }
+}
